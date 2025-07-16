@@ -121,6 +121,19 @@ This will:
 
 ---
 
+### Output Figures
+
+![Training Loss and Accuracy](Figure_1.png)
+*Figure 1: Training loss and accuracy per epoch. Watch your model glow up as it learns!*
+
+![Confusion Matrix](Figure_2.png)
+*Figure 2: Confusion matrix on the test set. Shows which digits the model confuses most.*
+
+![Sample Predictions](Figure_3.png)
+*Figure 3: Random sample predictions from the test set. Flexing the model’s digit recognition skills.*
+
+---
+
 ## Saving & Loading the Model
 After training, model weights are saved to `simple_nn_weights.npz`. You can load these weights later for inference or further training.
 
