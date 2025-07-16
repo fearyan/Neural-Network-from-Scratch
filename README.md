@@ -44,24 +44,43 @@ A neural network is just a bunch of matrix multiplications, non-linearities, and
 
 ### 1. Forward Pass (aka: "What does the network think?")
 - **Hidden Layer:**
-  - Compute: \( Z_1 = X W_1 + b_1 \)
-  - Activation: \( A_1 = \text{ReLU}(Z_1) \)
+  - Compute:
+    ```math
+    Z_1 = X W_1 + b_1
+    ```
+  - Activation:
+    ```math
+    A_1 = \text{ReLU}(Z_1)
+    ```
 - **Output Layer:**
-  - Compute: \( Z_2 = A_1 W_2 + b_2 \)
-  - Activation: \( A_2 = \text{softmax}(Z_2) \)
+  - Compute:
+    ```math
+    Z_2 = A_1 W_2 + b_2
+    ```
+  - Activation:
+    ```math
+    A_2 = \text{softmax}(Z_2)
+    ```
 
 ### 2. Loss (aka: "How much did we mess up?")
 - **Cross-Entropy Loss:**
-  - \( L = -\frac{1}{N} \sum_{i=1}^N \log(A_2[\text{true label}]) \)
+  ```math
+  L = -\frac{1}{N} \sum_{i=1}^N \log(A_2[i, y_i])
+  ```
+  Where $A_2[i, y_i]$ is the predicted probability for the true class $y_i$ of sample $i$.
 
 ### 3. Backpropagation (aka: "How do we fix our mistakes?")
 - Compute gradients of the loss with respect to all weights and biases using the chain rule:
-  - \( \frac{\partial L}{\partial W_2}, \frac{\partial L}{\partial b_2}, \frac{\partial L}{\partial W_1}, \frac{\partial L}{\partial b_1} \)
+  ```math
+  \frac{\partial L}{\partial W_2}, \quad \frac{\partial L}{\partial b_2}, \quad \frac{\partial L}{\partial W_1}, \quad \frac{\partial L}{\partial b_1}
+  ```
 - These gradients tell us how to nudge each parameter to make the loss smaller next time.
 
 ### 4. Gradient Descent (aka: "Level up!")
 - Update each parameter:
-  - \( W := W - \text{learning rate} \times \text{gradient} \)
+  ```math
+  W \leftarrow W - \text{learning rate} \times \text{gradient}
+  ```
 
 That’s it! Stack these steps for a bunch of epochs and your network learns to recognize digits like a pro.
 
