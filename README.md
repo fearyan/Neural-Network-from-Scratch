@@ -65,9 +65,13 @@ A neural network is just a bunch of matrix multiplications, non-linearities, and
 ### 2. Loss (aka: "How much did we mess up?")
 - **Cross-Entropy Loss:**
   ```math
-  L = -\frac{1}{N} \sum_{i=1}^N \log(A_2[i, y_i])
+  L = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^C y_{i,k} \log(\hat{y}_{i,k})
   ```
-  Where $A_2[i, y_i]$ is the predicted probability for the true class $y_i$ of sample $i$.
+  Where:
+  - $N$ is the number of samples
+  - $C$ is the number of classes
+  - $y_{i,k}$ is 1 if sample $i$ belongs to class $k$, else 0
+  - $\hat{y}_{i,k}$ is the predicted probability that sample $i$ is class $k$
 
 ### 3. Backpropagation (aka: "How do we fix our mistakes?")
 - Compute gradients of the loss with respect to all weights and biases using the chain rule:
