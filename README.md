@@ -66,7 +66,9 @@ A neural network is just a bunch of matrix multiplications, non-linearities, and
 - **Cross-Entropy Loss:**
 
   ```math
-  L = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^C y_{i,k} \log(\hat{y}_{i,k})
+\[
+L = - \left( \frac{1}{N} \right) \sum_{i=1}^{N} \sum_{k=1}^{C} y_{i,k} \cdot \log(\hat{y}_{i,k})
+\]
   ```
   Where:
   - $N$ is the number of samples
