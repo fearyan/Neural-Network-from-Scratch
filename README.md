@@ -112,7 +112,7 @@ This project implements:
 ## Setup & Installation
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/fearyan/Neural-Network-from-Scratch.git
    cd NN
    ```
 2. **Install dependencies:**
